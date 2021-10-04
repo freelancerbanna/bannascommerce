@@ -17,8 +17,10 @@ app.use(express.json());
 
 //routes and requring controllers
 const userRoute = require("./routes/userRouter");
+const authUser = require("./routes/authUser");
 
 app.use("/api", userRoute);
+app.use("/api", authUser);
 
 //port listening
 app.listen(process.env.PORT || 5000, () => {

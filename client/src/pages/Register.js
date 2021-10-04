@@ -63,6 +63,7 @@ const Button = styled.button`
 
 const Register = () => {
   const [inputs, setInputs] = useState({
+    username: "",
     fname: "",
     lname: "",
     email: "",
@@ -80,6 +81,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setInputs({
+      username: "",
       fname: "",
       lname: "",
       email: "",
@@ -92,6 +94,14 @@ const Register = () => {
       <Wrapper>
         <Title>Create an account</Title>
         <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="Username"
+            onChange={handleInput}
+            name="username"
+            value={username}
+            required
+          />
           <Input
             type="text"
             placeholder="First name"
