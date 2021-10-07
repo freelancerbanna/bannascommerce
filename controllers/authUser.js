@@ -17,7 +17,7 @@ const registerUser = async (req, res) => {
     const newUser = new UserModel(user);
     const saves = await newUser.save();
     if (saves) {
-      res.status(200).send("Registration Successfull");
+      res.status(200).send(user);
     } else {
       res.status(400).send("Registration Failed");
     }
